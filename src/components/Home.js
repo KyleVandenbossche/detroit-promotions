@@ -26,12 +26,13 @@ import essentialNeuropsychology from "../photos/clients/essential_neuropsycholog
 import primaryPink from "../photos/clients/Primary_Pink.png";
 import silverShamrocks from "../photos/clients/the-silver-shamrocks-stacked-logo.png";
 
-/* ✅ These two files (your hero photos) */
+/* hero photos */
 import rightImage from "../photos/157A7839 (1).jpg";
 import leftImage from "../photos/157A7985.jpg";
 
 /* ===========================
    Inline Counters component
+   (now uses section > shell > impact-card)
 =========================== */
 function CountersSection() {
   const sectionRef = React.useRef(null);
@@ -40,20 +41,18 @@ function CountersSection() {
   React.useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
-
     const counters = Array.from(el.querySelectorAll("[data-end]"));
 
     function animateCounter(node) {
       const end = parseInt(node.getAttribute("data-end"), 10) || 0;
-      const duration = parseInt(node.getAttribute("data-duration"), 10) || 1200; // ms
-      const start = 0;
+      const duration = parseInt(node.getAttribute("data-duration"), 10) || 1200;
       let startTs = null;
 
       function tick(ts) {
         if (!startTs) startTs = ts;
         const progress = Math.min((ts - startTs) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-        const current = Math.floor(start + (end - start) * eased);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(end * eased);
         node.textContent = current.toLocaleString();
         if (progress < 1) requestAnimationFrame(tick);
         else node.textContent = end.toLocaleString();
@@ -79,98 +78,98 @@ function CountersSection() {
   }, []);
 
   return (
-    <section className="impact-counters">
+    <section className="section">
       <div className="shell">
-        <h2 className="impact-title">
-          GENERATING NEW IDEAS. <br className="hide-sm" />
-          SOLVING BIG PROBLEMS
-        </h2>
-        <p className="impact-sub">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          laborum. Sed ut perspiciatis unde omnis.
-        </p>
+        <div className="impact-card">
+          <h3 className="impact-title">
+            Generating New Ideas. <br className="hide-sm" />
+            Solving Big Problems.
+          </h3>
+          <p className="impact-sub">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          </p>
 
-        <div className="count-grid" ref={sectionRef}>
-          <article className="count-card">
-            <div className="count-number" data-end="200" data-duration="1200">0</div>
-            <div className="count-label">PROJECTS</div>
-          </article>
-          <article className="count-card">
-            <div className="count-number" data-end="54" data-duration="1000">0</div>
-            <div className="count-label">SATISFIED CLIENTS</div>
-          </article>
-          <article className="count-card">
-            <div className="count-number" data-end="12" data-duration="900">0</div>
-            <div className="count-label">ONGOING PROJECTS</div>
-          </article>
-          <article className="count-card">
-            <div className="count-number" data-end="906" data-duration="1400">0</div>
-            <div className="count-label">CUPS OF COFFEE</div>
-          </article>
+          <div className="count-grid" ref={sectionRef}>
+            <article className="count-card">
+              <div className="count-number" data-end="200" data-duration="1200">0</div>
+              <div className="count-label">PROJECTS</div>
+            </article>
+            <article className="count-card">
+              <div className="count-number" data-end="54" data-duration="1000">0</div>
+              <div className="count-label">SATISFIED CLIENTS</div>
+            </article>
+            <article className="count-card">
+              <div className="count-number" data-end="12" data-duration="900">0</div>
+              <div className="count-label">ONGOING PROJECTS</div>
+            </article>
+            <article className="count-card">
+              <div className="count-number" data-end="906" data-duration="1400">0</div>
+              <div className="count-label">CUPS OF COFFEE</div>
+            </article>
+          </div>
         </div>
       </div>
 
-      {/* Integrated CSS for counters */}
+      {/* Integrated CSS just for the counters/card */}
       <style>{`
-       .impact-counters{
-  background:#9181CC;
-  color:#fff; /* better contrast on purple */
-  /* match your .section spacing */
-  padding: clamp(24px, 5vw, 56px) 0;
-}
+        /* Purple card sits inside the same shell as other sections */
+        .impact-card{
+          background:#9181CC;
+          color:#fff;
+          border-radius:20px;
+          padding: clamp(28px, 5vw, 56px);
+          box-shadow:0 6px 20px rgba(0,0,0,0.08);
+        }
 
-/* match other section titles (e.g., text-panel h3) */
-.impact-title{
-  text-align:center;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:-0.3px;
-  line-height:1.15;
-  font-size: clamp(32px, 3vw, 40px);
-  margin: 0 0 12px 0;
-}
+        /* Match other section title sizing */
+        .impact-title{
+          text-align:center;
+          font-weight:900;
+          letter-spacing:-0.3px;
+          line-height:1.15;
+          font-size: clamp(32px, 3vw, 40px);
+          margin:0 0 12px 0;
+        }
 
-.impact-sub{
-  text-align:center;
-  max-width: 760px;
-  margin: 0 auto clamp(16px, 3vw, 28px);
-  font-size: clamp(15px, 1.05vw, 18px);
-  color: rgba(255,255,255,0.9);
-}
+        .impact-sub{
+          text-align:center;
+          max-width:760px;
+          margin:0 auto clamp(16px, 3vw, 28px);
+          font-size: clamp(15px, 1.05vw, 18px);
+          color: rgba(255,255,255,0.9);
+        }
 
-/* align grid to shell width and tighten spacing */
-.count-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(16px, 2vw, 28px);
-  width: 100%;
-  max-width: none;   /* let .shell control the width like other sections */
-  margin: 0 auto;
-}
+        .count-grid{
+          padding: 45px;
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(16px, 2vw, 28px);
+          width:100%;
+          margin:0 auto;
+        }
 
-.count-card{ text-align:center; }
+        .count-card{ text-align:center; }
 
-.count-number{
-  font-weight: 800;
-  font-size: clamp(36px, 6vw, 60px);
-  line-height:1;
-  color: #fff;
-  text-shadow: 0 2px 0 rgba(0,0,0,0.06);
-}
+        .count-number{
+          font-weight:800;
+          font-size: clamp(36px, 6vw, 60px);
+          line-height:1;
+          color:#fff;
+          text-shadow:0 2px 0 rgba(0,0,0,0.06);
+        }
 
-.count-label{
-  margin-top: 8px;
-  font-size: clamp(12px, 1.1vw, 15px);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
-}
+        .count-label{
+          margin-top:8px;
+          font-size: clamp(12px, 1.1vw, 15px);
+          letter-spacing:0.12em;
+          text-transform:uppercase;
+          color:rgba(255,255,255,0.9);
+        }
 
-@media (max-width: 640px){
-  .count-grid{ grid-template-columns: 1fr; }
-  .hide-sm{ display:none; }
-}
-
+        @media (max-width:640px){
+          .count-grid{ grid-template-columns:1fr; }
+          .hide-sm{ display:none; }
+        }
       `}</style>
     </section>
   );
@@ -341,7 +340,7 @@ export default function DetroitPromotionsLanding() {
           <div className="dp-logo-scroller" aria-label="Client logos">
             <div className="dp-logo-track">
               {doubled.map((src, i) => {
-                let customHeight = 130; // default
+                let customHeight = 130;
                 if (src === cie || src === walsh || src === wags || src === primaryPink || src === silverShamrocks) customHeight = 85;
                 if (src === lululemon || src === stunningShots || src === contractingRemodelers) customHeight = 250;
                 if (src === mckinley || src === soulbris) customHeight = 160;
@@ -419,7 +418,6 @@ export default function DetroitPromotionsLanding() {
           </div>
         </div>
 
-        {/* Integrated CSS for reviews */}
         <style>{`
           .reviews-section { background:#fff; padding-block: clamp(28px, 5vw, 64px); }
           .reviews-title { text-align:center; font-size: clamp(28px, 3vw, 40px); font-weight:800; letter-spacing:-0.3px; margin:0 0 clamp(20px, 3vw, 32px) 0; color:#111; }
@@ -435,7 +433,7 @@ export default function DetroitPromotionsLanding() {
         `}</style>
       </section>
 
-      {/* ===== Section 5: Impact Counters ===== */}
+      {/* ===== Section 5: Impact Counters (now aligned via shell) ===== */}
       <CountersSection />
     </div>
   );
