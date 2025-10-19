@@ -11,6 +11,9 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import SocialRail from './components/SocialRail';
+import ScrollToTop from './components/ScrollToTop';
+
+// ⬅️ add this import (assuming you saved the helper at ./ScrollToTop)
 
 function Landing() {
   return (
@@ -32,6 +35,9 @@ function Layout() {
           margin: 0;
         }
       `}</style>
+
+      {/* ⬅️ run scroll-to-top on every route change */}
+      <ScrollToTop />
 
       <div
         style={{
