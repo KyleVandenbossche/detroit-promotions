@@ -11,19 +11,32 @@ export default function MeetTheTeam() {
       name: "Kyrstyn Dean",
       title: "CEO, Owner",
       img: kyrstynHeadshot,
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non tristique felis. Integer faucibus ex vel mi mattis, vel porta mi aliquam. Suspendisse potenti. Sed eget justo ut libero convallis volutpat."
+      bio: `I’m Kyrstyn Dean, a marketing strategist and business consultant passionate about helping brands grow and stand out. With an MBA from Walsh College and 10+ years of experience in the corporate business world focused on various verticals such as Business Development, Account Management, Sales, Project Management, and Customer Success, I combine strategic thinking with creative execution to build strong brand identities and engaging marketing campaigns.
+
+I specialize in creative direction, branding, social media strategy, content creation, digital marketing, and event management. I help businesses transform by crafting compelling campaigns, designing high-performing content, and developing cohesive marketing strategies that drive real results.
+
+I work with clients across a variety of industries—from fitness and healthcare to retail and hospitality. I understand how to align marketing efforts with business goals. I don’t just focus on aesthetics; I create data-driven strategies that enhance engagement, boost revenue, and build long-term brand loyalty.
+
+Whether curating digital marketing assets, managing large-scale client events, or consulting on brand direction, I thrive at the intersection of business and creativity.
+
+I’m not just a marketer—I’m a strategist, problem solver, and brand architect, dedicated to helping companies make a lasting impact.
+
+Your Friend in Marketing.`,
     },
     {
       name: "Kiki Pape",
       title: "Brand Voice Strategist, Account Manager",
       img: kikiHeadshot,
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor blandit velit, at ullamcorper nunc accumsan in. Nulla facilisi. Mauris sodales, eros at pulvinar condimentum, magna risus congue neque, ut gravida nunc elit nec nisl."
+      bio: `Kiersten (Kiki) Pape — known to most as Kiki — is a storyteller and strategist who blends creativity with purpose.
+As a Brand Story Strategist, Kiki has an intuitive sense for uncovering what makes a brand special—often knowing what it wants to say before it does. She helps brands break through the noise of digital storytelling with authenticity and inspiring content that truly connects.
+A graduate of the University of Colorado Boulder with a degree in English, Kiki brings a deep understanding of language and narrative craft to every project. She is also the author of *The Worry Wags*, her debut children’s book that helps kids explore big feelings through imagination and heart. Beyond her own work, she has shared her writing with organizations like Front Porch Nonprofit and others across the creative community.
+Utilizing the power of storytelling, Kiki captures the heart of a brand and transforms it into something memorable—and often, viral. In a world increasingly shaped by automation, she stands out through her originality, human insight, and timeless approach to storytelling—proving that genuine creativity will always cut through.`,
     },
     {
       name: "Kyle Vandenbossche",
       title: "Software/Data Management",
       img: kyleHeadshot,
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet luctus lorem, at sagittis tortor. Nunc sodales vehicula purus, ut euismod nisl ultrices sed. Proin vulputate luctus magna, a facilisis justo fermentum in."
+      bio: "Kyle Vandenbossche is a multidisciplinary creative and data engineer passionate about transforming ideas into digital experiences through analytics, design, and innovation."
     },
   ];
 

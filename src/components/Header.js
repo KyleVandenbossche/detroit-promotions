@@ -1,5 +1,5 @@
 import React from "react";
-import headerImage from "../photos/new-headline.PNG"; // change to .png if you rename the file
+import headerImage from "../photos/new-headline-1.png"; // change to .png if you rename the file
 
 export default function Header() {
   const styles = {
