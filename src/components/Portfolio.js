@@ -172,17 +172,20 @@ export default function Portfolio() {
           </div>
 
           {/* Dots */}
-          <div className="carousel-dots" role="tablist" aria-label="Slide selector">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                className={`dot ${currentIndex === idx ? "active" : ""}`}
-                onClick={() => goToSlide(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                aria-selected={currentIndex === idx}
-              />
-            ))}
-          </div>
+{/* Dots */}
+<div className="carousel-dots" role="group" aria-label="Slide selector">
+  {slides.map((_, idx) => (
+    <button
+      key={idx}
+      className={`dot ${currentIndex === idx ? "active" : ""}`}
+      onClick={() => goToSlide(idx)}
+      aria-label={`Go to slide ${idx + 1}`}
+      aria-pressed={currentIndex === idx}   // 👈 changed from aria-selected
+      type="button"
+    />
+  ))}
+</div>
+
         </div>
 
         {/* RIGHT text section (unchanged placeholder) */}
