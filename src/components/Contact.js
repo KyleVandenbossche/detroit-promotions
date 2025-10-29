@@ -15,6 +15,7 @@ export default function DetroitPromotionsForm() {
     "Custom Projects",
     "Campaigns Events and Launches",
   ];
+
   const [selectedServices, setSelectedServices] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -31,7 +32,7 @@ export default function DetroitPromotionsForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // helper: URL-encode an object for classic form posts
+  // URL-encode for classic form posts
   const encode = (data) =>
     Object.keys(data)
       .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -43,7 +44,6 @@ export default function DetroitPromotionsForm() {
     setErrorMsg("");
 
     try {
-      // Netlify Forms expects a classic form POST to "/"
       const payload = {
         "form-name": "detroit-promotions-contact",
         firstName: formData.firstName,
@@ -60,7 +60,6 @@ export default function DetroitPromotionsForm() {
       });
 
       if (!res.ok) throw new Error("Failed to send.");
-
       setSubmitted(true);
     } catch (err) {
       setErrorMsg(err.message || "Something went wrong. Please try again.");
@@ -110,7 +109,7 @@ export default function DetroitPromotionsForm() {
       </h1>
 
       <div style={cardStyle}>
-        {/* IMPORTANT: add name, data-netlify and honeypot. Keep onSubmit handler */}
+        {/* Netlify Forms attributes + honeypot */}
         <form
           name="detroit-promotions-contact"
           method="POST"
@@ -120,7 +119,7 @@ export default function DetroitPromotionsForm() {
           className="mx-auto"
           style={{ maxWidth: 640 }}
         >
-          {/* Netlify hidden inputs */}
+          {/* required hidden inputs for Netlify */}
           <input type="hidden" name="form-name" value="detroit-promotions-contact" />
           <p style={{ display: "none" }}>
             <label>
@@ -144,7 +143,6 @@ export default function DetroitPromotionsForm() {
             </div>
           )}
 
-          {/* your existing inputs... */}
           <div className="mb-3">
             <div style={{ fontWeight: 600, marginBottom: "6px" }}>First Name</div>
             <input
@@ -205,7 +203,6 @@ export default function DetroitPromotionsForm() {
               {SERVICE_OPTIONS.map((service) => {
                 const selected = selectedServices.includes(service);
                 return (
-                  // include a hidden checkbox for Netlify to capture values
                   <label
                     key={service}
                     style={{
