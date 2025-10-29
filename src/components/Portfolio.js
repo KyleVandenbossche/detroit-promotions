@@ -8,7 +8,7 @@ const slides = [
   { type: "video", src: require("../photos/5.mp4") }, // 4 -> SS
 ];
 
-const captions = ["lululemon", "Walsh College", "Flowerbar", "429 x PERSPIRE", "SS"];
+const captions = ["lululemon", "Walsh College", "FlowerBean", "429 x PERSPIRE", "Stunning Shots Photobooth"];
 
 /**
  * 🔧 EDIT THIS ARRAY with your client summaries.
@@ -35,7 +35,7 @@ We aligned visuals to program pillars and alumni success.`,
     bullets: ["Faculty/Alumni features", "Program pillars embedded", "Multi-platform delivery"],
   },
   {
-    title: "Campaign: Flowerbar",
+    title: "Campaign: FlowerBean",
     summary: `Short-form reels focused on texture, color, and motion to drive conversions.
 Emphasis on seasonal SKUs and event bundles.`,
     bullets: ["UGC-style angles", "CTA overlays", "Shop link end-cards"],
@@ -47,7 +47,7 @@ Balanced logo presence with lifestyle moments.`,
     bullets: ["Event recap", "Sponsor callouts", "Loop-ready cut"],
   },
   {
-    title: "Campaign: SS",
+    title: "Campaign: Stunning Shots Photobooth",
     summary: `Launch assets built for fast iteration and A/B testing on hooks.
 Hook-first editing to lift 3-sec hold and completion rate.`,
     bullets: ["Hook variants", "Caption testing", "Paid-ready masters"],
