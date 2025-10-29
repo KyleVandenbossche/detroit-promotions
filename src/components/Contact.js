@@ -15,7 +15,6 @@ export default function DetroitPromotionsForm() {
     "Custom Projects",
     "Campaigns Events and Launches",
   ];
-
   const [selectedServices, setSelectedServices] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -32,32 +31,35 @@ export default function DetroitPromotionsForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Sends JSON to your backend
+  // helper: URL-encode an object for classic form posts
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     setErrorMsg("");
 
-    const subject = `[${formData.firstName} ${formData.lastName} - ${formData.company || "No Company"}]`;
-
     try {
-      const res = await fetch("/api/contact", {
+      // Netlify Forms expects a classic form POST to "/"
+      const payload = {
+        "form-name": "detroit-promotions-contact",
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        company: formData.company,
+        reason: formData.reason,
+        services: selectedServices.join(", "),
+      };
+
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          subject,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          company: formData.company,
-          reason: formData.reason,
-          services: selectedServices,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
       });
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || "Failed to send.");
-      }
+      if (!res.ok) throw new Error("Failed to send.");
 
       setSubmitted(true);
     } catch (err) {
@@ -108,7 +110,25 @@ export default function DetroitPromotionsForm() {
       </h1>
 
       <div style={cardStyle}>
-        <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: 640 }}>
+        {/* IMPORTANT: add name, data-netlify and honeypot. Keep onSubmit handler */}
+        <form
+          name="detroit-promotions-contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          className="mx-auto"
+          style={{ maxWidth: 640 }}
+        >
+          {/* Netlify hidden inputs */}
+          <input type="hidden" name="form-name" value="detroit-promotions-contact" />
+          <p style={{ display: "none" }}>
+            <label>
+              Don’t fill this out if you’re human:
+              <input name="bot-field" onChange={() => {}} />
+            </label>
+          </p>
+
           {errorMsg && (
             <div
               style={{
@@ -124,6 +144,7 @@ export default function DetroitPromotionsForm() {
             </div>
           )}
 
+          {/* your existing inputs... */}
           <div className="mb-3">
             <div style={{ fontWeight: 600, marginBottom: "6px" }}>First Name</div>
             <input
@@ -184,17 +205,9 @@ export default function DetroitPromotionsForm() {
               {SERVICE_OPTIONS.map((service) => {
                 const selected = selectedServices.includes(service);
                 return (
-                  <div
+                  // include a hidden checkbox for Netlify to capture values
+                  <label
                     key={service}
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => toggleService(service)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        toggleService(service);
-                      }
-                    }}
                     style={{
                       background: selected ? "#9181CC" : "#f9f9f9",
                       color: selected ? "#fff" : "#000",
@@ -208,11 +221,28 @@ export default function DetroitPromotionsForm() {
                         "background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease",
                       boxShadow: selected ? "0 8px 18px rgba(145,129,204,0.25)" : "none",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-1px)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleService(service);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        toggleService(service);
+                      }
+                    }}
+                    tabIndex={0}
                   >
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={service}
+                      checked={selected}
+                      readOnly
+                      style={{ display: "none" }}
+                    />
                     {service}
-                  </div>
+                  </label>
                 );
               })}
             </div>
@@ -247,12 +277,6 @@ export default function DetroitPromotionsForm() {
               transition: "transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease",
               cursor: submitting ? "not-allowed" : "pointer",
               opacity: submitting ? 0.7 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (!submitting) e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
             {submitting ? "Sending..." : "Submit"}
