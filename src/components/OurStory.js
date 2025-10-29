@@ -84,43 +84,7 @@ export default function OurStory() {
           </p>
         </section>
 
-        <section className="mb-5" style={{ marginTop: "3rem", marginBottom: "1.75rem" }}>
-          <h4 className="fw-bold mb-3" style={{ marginBottom: "0.75rem" }}>
-            More Than a Marketing Agency — A Movement for Meaningful Brands
-          </h4>
-          <p>
-            I’m Kyrstyn Dean, a marketing strategist and business consultant passionate about helping
-            brands grow and stand out digitally. With an MBA from Walsh College and 10+ years of
-            experience in the corporate business world focused on various verticals such as Business
-            Development, Account Management, Sales, Project Management, and Customer Success, I combine
-            strategic thinking with creative execution to build strong brand identities and engaging
-            media experiences.
-          </p>
-          <p>
-            I specialize in branding, social media strategy, and content creation. I help businesses
-            transform their online presence by crafting compelling campaigns, designing high-performing
-            content, and developing cohesive marketing strategies that drive real results.
-          </p>
-          <p>
-            With marketing experience across industries—healthcare and fitness—I understand how to align
-            marketing efforts with business goals. I don’t just focus on aesthetics; I create data-driven
-            strategies that enhance engagement, boost revenue, and build long-term brand loyalty.
-          </p>
-          <p>
-            Whether curating interactive digital marketing gift guides, designing social content tailored
-            to a brand’s aesthetic, or consulting on brand direction, I thrive at the intersection of
-            business and creativity.
-          </p>
-          <p>
-            I’m not just a marketer—a strategist, problem solver, and brand architect, dedicated to
-            helping companies make a lasting impact.
-          </p>
-          <p><em>Your Friend in Marketing</em></p>
-        </section>
 
-        
-
-        
 
       </div>
     </div>
