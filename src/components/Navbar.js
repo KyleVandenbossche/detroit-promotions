@@ -95,16 +95,20 @@ export default function NavbarComponent() {
               style={{ fontWeight: 600, letterSpacing: "0.2px" }}
             >
               {links.map(({ name, path }) => (
-                <Nav.Link
-                  key={name}
-                  as={NavLink}
-                  to={path}
-                  end={path === "/"}
-                  className="dp-link"
-                  onClick={() => setExpanded(false)} // close when a link is tapped
-                >
-                  {name}
-                </Nav.Link>
+<Nav.Link
+  key={name}
+  as={NavLink}
+  to={path}
+  end={path === "/"}
+  className="dp-link"
+  onClick={() => {
+    setExpanded(false);        // close the mobile menu
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
+  }}
+>
+  {name}
+</Nav.Link>
+
               ))}
             </Nav>
           </Navbar.Collapse>

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 /* 🖼️ These files live directly in src/ */
-import kyrstynHeadshot from "../photos/kyrstyn-headshot.jpg";        // ← use the exact filename you have
+import kyrstynHeadshot from "../photos/kyrstyn-headshot.jpg";
 import kikiHeadshot from "../photos/kiki-headshot.jpg";
 import kyleHeadshot from "../photos/kyle-headshot.jpg";
+import blankHeadshot from "../photos/blank-headshot.png"; // ← new filler photo
 
 export default function MeetTheTeam() {
   const teamMembers = [
@@ -37,6 +38,12 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
       title: "Software/Data Management",
       img: kyleHeadshot,
       bio: "Kyle Vandenbossche is a multidisciplinary creative and data engineer passionate about transforming ideas into digital experiences through analytics, design, and innovation."
+    },
+    {
+      name: "Morgan Ulin",
+      title: "Marketing & Content Strategist Intern",
+      img: blankHeadshot,
+      bio: "This is a placeholder bio for our newest team member. They bring fresh ideas, creativity, and energy to every project — helping bring our clients’ visions to life."
     },
   ];
 
@@ -107,7 +114,7 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
                             to   { opacity: 1; transform: translateY(0); } }
 
         @media (min-width: 768px) {
-          .team-members { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+          .team-members { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; }
           .photo-card { border-radius: 18px; }
           .member-name { font-size: 21px; }
           .member-title { font-size: 17px; }

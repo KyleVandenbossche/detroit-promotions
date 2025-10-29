@@ -5,7 +5,7 @@ const PURPLE = "#9181CC";
 export default function SocialRail({
   instagram = "https://www.instagram.com/detroit_promotions/?hl=en",
   facebook  = "https://facebook.com/yourpage",
-  linkedin  = "https://www.linkedin.com/in/kyrstyndean/",
+  linkedin  = "https://www.linkedin.com/company/detroitpromotions/",
 }) {
   const linkStyle = {
     width: 64,
