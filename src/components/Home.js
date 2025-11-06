@@ -31,8 +31,7 @@ import rightImage from "../photos/157A7839 (1).jpg";
 import leftImage from "../photos/157A7985.jpg";
 
 /* ===========================
-   Inline Counters component
-   (now uses section > shell > impact-card)
+   Impact Counters
 =========================== */
 function CountersSection() {
   const sectionRef = React.useRef(null);
@@ -46,6 +45,9 @@ function CountersSection() {
     function animateCounter(node) {
       const end = parseInt(node.getAttribute("data-end"), 10) || 0;
       const duration = parseInt(node.getAttribute("data-duration"), 10) || 1200;
+      const prefix = node.getAttribute("data-prefix") || "";
+      const suffix = node.getAttribute("data-suffix") || "";
+
       let startTs = null;
 
       function tick(ts) {
@@ -53,9 +55,14 @@ function CountersSection() {
         const progress = Math.min((ts - startTs) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.floor(end * eased);
-        node.textContent = current.toLocaleString();
+
+        // Show "+" only when the animation completes
+        node.textContent =
+          progress < 1
+            ? `${prefix}${current.toLocaleString()}`
+            : `${prefix}${end.toLocaleString()}${suffix}`;
+
         if (progress < 1) requestAnimationFrame(tick);
-        else node.textContent = end.toLocaleString();
       }
       requestAnimationFrame(tick);
     }
@@ -91,15 +98,20 @@ function CountersSection() {
 
           <div className="count-grid" ref={sectionRef}>
             <article className="count-card">
-              <div className="count-number" data-end="200" data-duration="1200">0</div>
+              <div className="count-number" data-end="182" data-duration="1200">0</div>
               <div className="count-label">PROJECTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="54" data-duration="1000">0</div>
+              <div
+                className="count-number"
+                data-end="30"
+                data-duration="1000"
+                data-suffix="+"
+              >0</div>
               <div className="count-label">SATISFIED CLIENTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="12" data-duration="900">0</div>
+              <div className="count-number" data-end="205" data-duration="900">0</div>
               <div className="count-label">ONGOING PROJECTS</div>
             </article>
             <article className="count-card">
@@ -112,7 +124,6 @@ function CountersSection() {
 
       {/* Integrated CSS just for the counters/card */}
       <style>{`
-        /* Purple card sits inside the same shell as other sections */
         .impact-card{
           background:#9181CC;
           color:#fff;
@@ -120,8 +131,6 @@ function CountersSection() {
           padding: clamp(28px, 5vw, 56px);
           box-shadow:0 6px 20px rgba(0,0,0,0.08);
         }
-
-        /* Match other section title sizing */
         .impact-title{
           text-align:center;
           font-weight:900;
@@ -130,7 +139,6 @@ function CountersSection() {
           font-size: clamp(32px, 3vw, 40px);
           margin:0 0 12px 0;
         }
-
         .impact-sub{
           text-align:center;
           max-width:760px;
@@ -138,7 +146,6 @@ function CountersSection() {
           font-size: clamp(15px, 1.05vw, 18px);
           color: rgba(255,255,255,0.9);
         }
-
         .count-grid{
           padding: 45px;
           display:grid;
@@ -147,9 +154,7 @@ function CountersSection() {
           width:100%;
           margin:0 auto;
         }
-
         .count-card{ text-align:center; }
-
         .count-number{
           font-weight:800;
           font-size: clamp(36px, 6vw, 60px);
@@ -157,7 +162,6 @@ function CountersSection() {
           color:#fff;
           text-shadow:0 2px 0 rgba(0,0,0,0.06);
         }
-
         .count-label{
           margin-top:8px;
           font-size: clamp(12px, 1.1vw, 15px);
@@ -165,7 +169,6 @@ function CountersSection() {
           text-transform:uppercase;
           color:rgba(255,255,255,0.9);
         }
-
         @media (max-width:640px){
           .count-grid{ grid-template-columns:1fr; }
           .hide-sm{ display:none; }
@@ -363,57 +366,35 @@ export default function DetroitPromotionsLanding() {
       {/* ===== Section 3: How We Do It + photo ===== */}
       <section className="section pull-up">
         <div className="shell">
-          <div className="wwd-wrap">
+          <div className="wwd-wrap how-wrap">
             <div className="img-right-wrap">
               <img src={leftImage} alt="Detroit Promotions example" className="img-right" loading="lazy" />
             </div>
             <div className="text-panel">
-              <div>
+              <div className="inner">
                 <h3>How We Do It</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut pe.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut pe.</p>
+                <br />
+                <p>
+                  We move fast when the moment calls for it, slow when care is needed, and always with intention.
+                  Every collaboration is an opportunity to elevate not just the work, but the people involved.
+                </p>
+                <br />
+                <p>
+                  We don’t just deliver projects—we make them matter. We build real connections, foster lasting
+                  relationships, and make sure every project doesn’t just get done—it gets remembered.
+                </p>
+                <br />
+                <p>We make every collaboration an opportunity to elevate not just the work, but the people involved.</p>
+                <br />
+                <p>
+                  We cut through the noise of "marketing" where everyone’s “building their brand” and posting without
+                  purpose—that’s when Detroit Promotions stands apart.
+                </p>
+                <br />
+                <p className="fancy-quote">Your work isn’t just your work—it becomes part of ours.</p>
               </div>
               <div className="cta-wrap">{/* optional CTA */}</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Section 4: Reviews ===== */}
-      <section className="reviews-section">
-        <div className="shell">
-          <h3 className="reviews-title">What Our Clients Say</h3>
-
-          <div className="reviews-grid">
-            {[
-              { name: "Kelly",  text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in justo augue. Praesent volutpat urna nec laoreet pharetra.”", stars: 5 },
-              { name: "Aaron",  text: "“Nullam pretium, odio in gravida dignissim, mauris mauris volutpat lacus, vitae cursus odio ligula id lorem. Aenean sit amet risus.”", stars: 5 },
-              { name: "Jordan", text: "“Suspendisse potenti. Curabitur convallis, quam at luctus lacinia, arcu odio efficitur leo, non molestie neque tortor vitae nisi.”", stars: 4 },
-              { name: "Monica", text: "“Aliquam euismod, est a iaculis commodo, dolor sapien consequat ipsum, vel fermentum velit ex ut lectus. Sed dictum lacus nec augue.”", stars: 5 },
-              { name: "Priya",  text: "“Etiam semper, nibh sit amet auctor rhoncus, urna erat auctor felis, id interdum lorem arcu in dui. Cras id dolor vitae metus.”", stars: 5 },
-              { name: "Ramon",  text: "“Pellentesque habitant morbi tristique senectus et netus. Integer mollis leo ut nibh rhoncus, id viverra massa accumsan.”", stars: 4 },
-            ].map((r, i) => (
-              <article key={i} className="review-card" aria-label={`Review by ${r.name}`}>
-                <div className="stars" aria-hidden="true">
-                  {Array.from({ length: 5 }).map((_, idx) => (
-                    <svg
-                      key={idx}
-                      className="star"
-                      viewBox="0 0 24 24"
-                      fill={idx < r.stars ? "#FBBF24" : "none"}
-                      stroke={idx < r.stars ? "#FBBF24" : "#94A3B8"}
-                      strokeWidth="1.5"
-                    >
-                      <path d="M12 3.6l2.76 5.6 6.18.9-4.47 4.36 1.06 6.18L12 17.9 6.47 20.7l1.06-6.18L3.06 10.1l6.18-.9L12 3.6z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="review-quote">{r.text}</p>
-                <div className="reviewer">{r.name}</div>
-              </article>
-            ))}
           </div>
         </div>
 
@@ -427,12 +408,26 @@ export default function DetroitPromotionsLanding() {
           .reviewer { text-align:center; font-weight:700; margin-top:6px; }
           .stars { display:flex; justify-content:center; gap:4px; margin-bottom:8px; }
           .star { width:22px; height:22px; flex:0 0 auto; }
+
+          /* Center the text column vertically only in the How We Do It section */
+          .how-wrap .text-panel{ display:flex; justify-content:center; }
+          .how-wrap .text-panel .inner{ width:100%; max-width:90%; margin-inline:auto; }
+
+          .fancy-quote{
+            font-style: italic; font-weight: 700; letter-spacing: 0.01em;
+            position: relative; display:inline-block; padding-bottom: 4px;
+            background-image: linear-gradient(90deg, #9181CC 0%, rgba(145,129,204,0.15) 100%);
+            background-size: 100% 2px; background-repeat: no-repeat; background-position: 0 100%;
+          }
+          .fancy-quote::before, .fancy-quote::after{ content:"“"; opacity:.35; font-weight:800; }
+          .fancy-quote::after{ content:"”"; margin-left:2px; }
+
           @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
           @media (min-width: 1100px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         `}</style>
       </section>
 
-      {/* ===== Section 5: Impact Counters (now aligned via shell) ===== */}
+      {/* ===== Section 5: Impact Counters ===== */}
       <CountersSection />
     </div>
   );

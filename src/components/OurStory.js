@@ -65,6 +65,7 @@ export default function OurStory() {
             <li>Serving on the Macomb Community College Business Advisory Board</li>
             <li>Partnering with Walsh College’s Center for Innovation & Entrepreneurship (CIE)</li>
             <li>Being the first business to pilot Walsh College’s Emerging Leader Program</li>
+            <li>We also proudly, warmly and regularly welcome interns from Metro Detroit colleges to learn, create, and gain real-world experience alongside our team</li>
           </ul>
           <p style={{ marginTop: "0.75rem" }}>
             These programs aren’t just resume lines—they’re part of our mission to give back, pay it forward,
