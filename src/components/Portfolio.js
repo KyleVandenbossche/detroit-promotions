@@ -238,7 +238,7 @@ export default function Portfolio() {
         </div>
 
         {/* RIGHT text section (placeholder) */}
-        <div className="text-panel right">
+        {/* <div className="text-panel right">
           <h3>Portfolio</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut
@@ -248,7 +248,7 @@ export default function Portfolio() {
             Nullam efficitur, nisi ac sodales ultrices, justo lectus suscipit
             magna, eget posuere erat lorem vitae felis.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Inline CSS */}

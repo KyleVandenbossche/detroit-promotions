@@ -375,7 +375,7 @@ export default function DetroitPromotionsLanding() {
               <div className="inner">
                 {/* <-- added inner wrapper */}
                 <h3>How We Do It</h3>
-                <br />
+
                 <p>
                   We move fast when the moment calls for it, slow when care is needed, and always with intention.
                   Every collaboration is an opportunity to elevate not just the work, but the people involved.
@@ -385,7 +385,7 @@ export default function DetroitPromotionsLanding() {
                   We don’t just deliver projects—we make them matter. We build real connections, foster lasting
                   relationships, and make sure every project doesn’t just get done—it gets remembered.
                 </p>
-                <br />
+
                 <p>We make every collaboration an opportunity to elevate not just the work, but the people involved.</p>
                 <br />
                 <p>
