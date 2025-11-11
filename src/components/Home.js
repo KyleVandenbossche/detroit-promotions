@@ -94,7 +94,7 @@ function CountersSection() {
 
           <div className="count-grid" ref={sectionRef}>
             <article className="count-card">
-              <div className="count-number" data-end="184" data-duration="1200">0</div>
+              <div className="count-number" data-end="204" data-duration="1200">0</div>
               <div className="count-label">PROJECTS</div>
             </article>
             <article className="count-card">
@@ -102,7 +102,7 @@ function CountersSection() {
               <div className="count-label">SATISFIED CLIENTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="204" data-duration="900">0</div>
+              <div className="count-number" data-end="13" data-duration="900">0</div>
               <div className="count-label">ONGOING PROJECTS</div>
             </article>
             <article className="count-card">
