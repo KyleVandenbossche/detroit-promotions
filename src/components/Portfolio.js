@@ -31,9 +31,9 @@ const CLIENT_SUMMARIES = [
     title: "Campaign: Walsh College",
     summary: {
       description:
-        "lorem ipsem",
+        "Detroit Promotions partnered with Walsh College in support of their Center for Innovation and Entrepreneurship (CIE) — helping spotlight the students, mentors, and local leaders driving ideas forward. The focus was on capturing the spirit of innovation and the community that fuels it.",
       problem:
-        "lorem ipsem",
+        "Walsh wanted to highlight initiatives like CIE in a way that felt engaging and accessible — showcasing the real people and passions behind the program rather than a traditional business narrative.",
       solution:
         "Detroit Promotions helped bring the vision to life by capturing the events through dynamic photo and video storytelling — highlighting the people, the energy, and the heartbeat of the city. The result was content that carried the same authenticity and connection long after the events ended.",
     },
