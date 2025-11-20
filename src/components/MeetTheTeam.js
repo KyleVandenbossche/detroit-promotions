@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import kyrstynHeadshot from "../photos/kyrstyn-headshot.jpg";
 import kikiHeadshot from "../photos/kiki-headshot.jpg";
 import kyleHeadshot from "../photos/kyle-headshot.jpg";
-import blankHeadshot from "../photos/blank-headshot.png";
+import morganHeadshot from "../photos/morgan-headshot.jpeg";
 
 export default function MeetTheTeam() {
   const teamMembers = [
@@ -43,7 +43,7 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
     {
       name: "Morgan Ulin",
       title: "Marketing & Content Strategist Intern",
-      img: blankHeadshot,
+      img: morganHeadshot,
       bio:
         `Morgan sees stories everywhere—within colors, captions, and the quiet details that make a brand feel human. A student at the University of Michigan–Dearborn studying Communications with a minor in Marketing, she’s drawn to the art of shaping ideas into something people can feel.
 
