@@ -1,3 +1,4 @@
+// HOME
 import React from "react";
 import { Link } from "react-router-dom";
 import elevate from "../photos/clients/elevate.png";
