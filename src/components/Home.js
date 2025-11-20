@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import elevate from "../photos/clients/elevate.png";
 import sparkling from "../photos/clients/sparkling-sundays.png";
 import sloDown from "../photos/clients/slo-down-wines.png";
