@@ -18,8 +18,6 @@ import lululemon from "../photos/clients/lululemon.png";
 import walsh from "../photos/clients/walsh.png";
 import stunningShots from "../photos/clients/stunning-shots.png";
 import wags from "../photos/clients/wags.JPEG";
-
-/* New imports from your folder */
 import contractingRemodelers from "../photos/clients/contracting_remodelers.png";
 import dearDarlinDetroit from "../photos/clients/dear_darlin_detroit.png";
 import essentialNeuropsychology from "../photos/clients/essential_neuropsychology.jpg";
