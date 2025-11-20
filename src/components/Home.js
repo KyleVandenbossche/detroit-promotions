@@ -314,6 +314,7 @@ export default function DetroitPromotionsLanding() {
                   strategy, and compelling content. From startups to established brands, we bring
                   business-minded creativity that connects, converts, and scales.
                 </p>
+               
                 <p>We help brands show up bigger—online and off.</p>
               </div>
               <div className="cta-wrap">
