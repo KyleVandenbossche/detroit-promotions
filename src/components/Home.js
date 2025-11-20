@@ -374,26 +374,24 @@ export default function DetroitPromotionsLanding() {
             <div className="text-panel">
               <div className="inner">
                 {/* <-- added inner wrapper */}
+                  <br />
+                  <br />
                 <h3>How We Do It</h3>
 
                 <p>
                   We move fast when the moment calls for it, slow when care is needed, and always with intention.
                   Every collaboration is an opportunity to elevate not just the work, but the people involved.
                 </p>
-                <br />
                 <p>
                   We don’t just deliver projects—we make them matter. We build real connections, foster lasting
                   relationships, and make sure every project doesn’t just get done—it gets remembered.
                 </p>
 
                 <p>We make every collaboration an opportunity to elevate not just the work, but the people involved.</p>
-                <br />
                 <p>
                   We cut through the noise of "marketing" where everyone’s “building their brand” and posting without purpose—
                   that’s when Detroit Promotions stands apart.
                 </p>
-                <br />
-                <br />
                 <p className="fancy-quote">Your work isn’t just your work—it becomes part of ours.</p>
               </div>
               <div className="cta-wrap">{/* optional CTA */}</div>
@@ -453,10 +451,11 @@ export default function DetroitPromotionsLanding() {
           @media (min-width: 1100px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
           /* Center the text column vertically only in the How We Do It section */
-          .how-wrap .text-panel{
-            display:flex; /* repeat for safety */
-            justify-content:center; /* centers content vertically inside this column */
-          }
+/* Slightly more space between paragraphs in Section 3 only */
+.how-wrap .text-panel p {
+  margin: 1.25rem 0;
+}
+
 
           /* Keep content width tidy while centered */
           .how-wrap .text-panel .inner{

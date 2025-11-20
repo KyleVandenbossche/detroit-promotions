@@ -101,6 +101,8 @@ const IMAGE_MAP = {
   "Campaigns, Events, & Launches": require("../photos/campaigns_events_launches.jpg"),
   "Custom Projects": require("../photos/custom_projects.jpg"),
   "Life’s Big Moments": require("../photos/lifes_big_moments.PNG"),
+  "UGC": require("../photos/user-generated-content.PNG"),
+  "Creative Support": require("../photos/creative-support.PNG"),
   // "UGC (User Generated Content)"  // no image provided
   // "Creative Support"              // no image provided
 };
@@ -137,7 +139,7 @@ const services = [
       "Capturing the magic behind the moments – including bachelorette parties, engagement parties, bridal showers, dress fittings, glam sessions, birthday parties, retirement parties, corporate parties and behind-the-scenes of any big day.",
   },
   {
-    title: "UGC (User Generated Content)",
+    title: "UGC",
     description:
       "Boost your brand with UGC-style content that blends authenticity with strategy — perfect for showcasing real results, product demos, or customer experiences.",
   },
