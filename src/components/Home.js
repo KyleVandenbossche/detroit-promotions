@@ -459,7 +459,7 @@ We cut through the noise of "marketing" where everyone’s “building their bra
           /* Subtle, elegant treatment for the line */
           .fancy-quote{
             font-style: italic; /* fancier feel, same size */
-            font-weight: 900;   /* adds presence without resizing */
+            font-weight: 800;   /* adds presence without resizing */
             letter-spacing: 0.01em;
             position: relative;
             display:inline-block;
