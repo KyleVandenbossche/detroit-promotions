@@ -378,18 +378,11 @@ export default function DetroitPromotionsLanding() {
                 <h3>How We Do It</h3>
 
                 <p>
-                  We move fast when the moment calls for it, slow when care is needed, and always with intention.
-                  Every collaboration is an opportunity to elevate not just the work, but the people involved.
-                </p>
-                <p>
-                  We don’t just deliver projects—we make them matter. We build real connections, foster lasting
-                  relationships, and make sure every project doesn’t just get done—it gets remembered.
-                </p>
-
-                <p>We make every collaboration an opportunity to elevate not just the work, but the people involved.</p>
-                <p>
-                  We cut through the noise of "marketing" where everyone’s “building their brand” and posting without purpose—
-                  that’s when Detroit Promotions stands apart.
+We move fast when the moment calls for it, slow when care is needed, and always with intention. We make every collaboration an opportunity to elevate not just the work, but the people involved.
+</p>
+We don’t just deliver projects—we make them matter. We build real connections, foster lasting relationships, and make sure every project doesn’t just get done—it gets remembered.
+<p>
+We cut through the noise of "marketing" where everyone’s “building their brand” and posting without purpose— that’s when Detroit Promotions stands apart.
                 </p>
                 <p className="fancy-quote">Your work isn’t just your work—it becomes part of ours.</p>
               </div>
@@ -466,7 +459,7 @@ export default function DetroitPromotionsLanding() {
           /* Subtle, elegant treatment for the line */
           .fancy-quote{
             font-style: italic; /* fancier feel, same size */
-            font-weight: 700;   /* adds presence without resizing */
+            font-weight: 900;   /* adds presence without resizing */
             letter-spacing: 0.01em;
             position: relative;
             display:inline-block;
