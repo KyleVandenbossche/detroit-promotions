@@ -52,22 +52,13 @@ Her background blends strategy with imagination. She’s guided social campaigns
 
 When she’s not creating, she’s teaching movement as a STOTT Pilates instructor. On the mat, she’s learned the same lessons she brings into her creative work: patience, balance, precision, and presence. She approaches every project like a practice—grounded, purposeful, and always in motion.`,
     },
-    {
-      name: "Yasmine El-Aroud",
-      title: "Accounting & Billing Coordinator",
-      img: yasmineHeadshot,
-      bio:
-        `Yasmine El-Aroud has a keen eye for detail and loves to see how numbers
-         come together to shape business decision-making. As a finance student 
-         at the University of Michigan-Dearborn, she sees the numbers as a 
-         way to support growth, build trust, and create a strong foundation 
-         for creative work to thrive in a business. As well as being the 
-         accounts payable contact, Yasmine works to reveal insightful
-          information through managing and analyzing financial data. 
-          She applies her background knowledge to ensure accuracy and 
-          consistency in telling stories with numbers and in behind the 
-          scenes operations`,
-    },
+{
+  name: "Yasmine El-Aroud",
+  title: "Accounting & Billing Coordinator",
+  img: yasmineHeadshot,
+  bio: `Yasmine El-Aroud has a keen eye for detail and loves to see how numbers come together to shape business decision-making. As a finance student at the University of Michigan–Dearborn, she sees numbers as a way to support growth, build trust, and create a strong foundation for creative work to thrive in a business. In addition to serving as the accounts payable contact, Yasmine works to uncover insights by managing and analyzing financial data. She applies her background knowledge to ensure accuracy and consistency in telling stories with numbers and supporting behind-the-scenes operations.`,
+}
+
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
