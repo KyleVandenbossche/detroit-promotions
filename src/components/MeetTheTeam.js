@@ -41,17 +41,17 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
       bio:
         "Kyle Vandenbossche is a multidisciplinary creative and data engineer passionate about transforming ideas into digital experiences through analytics, design, and innovation.",
     },
-    {
-      name: "Morgan Ulin",
-      title: "Marketing & Content Strategist",
-      img: morganHeadshot,
-      bio:
-        `Morgan sees stories everywhere—within colors, captions, and the quiet details that make a brand feel human. A student at the University of Michigan–Dearborn studying Communications with a minor in Marketing, she’s drawn to the art of shaping ideas into something people can feel.
+//     {
+//       name: "Morgan Ulin",
+//       title: "Marketing & Content Strategist",
+//       img: morganHeadshot,
+//       bio:
+//         `Morgan sees stories everywhere—within colors, captions, and the quiet details that make a brand feel human. A student at the University of Michigan–Dearborn studying Communications with a minor in Marketing, she’s drawn to the art of shaping ideas into something people can feel.
 
-Her background blends strategy with imagination. She’s guided social campaigns, built brand partnerships, and crafted visuals that give messages a heartbeat. For Morgan, good design isn’t just seen—it’s understood. It moves with intention, speaks with clarity, and always leaves something behind.
+// Her background blends strategy with imagination. She’s guided social campaigns, built brand partnerships, and crafted visuals that give messages a heartbeat. For Morgan, good design isn’t just seen—it’s understood. It moves with intention, speaks with clarity, and always leaves something behind.
 
-When she’s not creating, she’s teaching movement as a STOTT Pilates instructor. On the mat, she’s learned the same lessons she brings into her creative work: patience, balance, precision, and presence. She approaches every project like a practice—grounded, purposeful, and always in motion.`,
-    },
+// When she’s not creating, she’s teaching movement as a STOTT Pilates instructor. On the mat, she’s learned the same lessons she brings into her creative work: patience, balance, precision, and presence. She approaches every project like a practice—grounded, purposeful, and always in motion.`,
+//     },
 {
   name: "Yasmine El-Aroud",
   title: "Accounting & Billing Coordinator",
