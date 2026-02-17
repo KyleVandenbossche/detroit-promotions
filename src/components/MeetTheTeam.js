@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import kyrstynHeadshot from "../photos/kyrstyn-headshot.jpg";
 import kikiHeadshot from "../photos/kiki-headshot.jpg";
 import kyleHeadshot from "../photos/kyle-headshot.jpg";
-import morganHeadshot from "../photos/morgan-headshot.jpeg";
+// import morganHeadshot from "../photos/morgan-headshot.jpeg";
 import yasmineHeadshot from "../photos/yasmine-headshot.jpg";
 
 export default function MeetTheTeam() {
