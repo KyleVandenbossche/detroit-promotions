@@ -317,7 +317,7 @@ export default function DetroitPromotionsLanding() {
               </div>
               <div className="cta-wrap">
                 <Link
-                  to="/services"
+                  to="/contact"
                   className="cta"
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
