@@ -4,8 +4,8 @@ import React, { useRef, useState } from "react";
 import kyrstynHeadshot from "../photos/kyrstyn-headshot.jpg";
 import kikiHeadshot from "../photos/kiki-headshot.jpg";
 import kyleHeadshot from "../photos/kyle-headshot.jpg";
-// import morganHeadshot from "../photos/morgan-headshot.jpeg";
 import yasmineHeadshot from "../photos/yasmine-headshot.jpg";
+import kaylaHeadshot from "../photos/kayla-headshot.png";
 
 export default function MeetTheTeam() {
   const teamMembers = [
@@ -52,13 +52,20 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
 
 // When she’s not creating, she’s teaching movement as a STOTT Pilates instructor. On the mat, she’s learned the same lessons she brings into her creative work: patience, balance, precision, and presence. She approaches every project like a practice—grounded, purposeful, and always in motion.`,
 //     },
-{
-  name: "Yasmine El-Aroud",
-  title: "Accounting & Billing Coordinator",
-  img: yasmineHeadshot,
-  bio: `Yasmine El-Aroud has a keen eye for detail and loves to see how numbers come together to shape business decision-making. As a finance student at the University of Michigan–Dearborn, she sees numbers as a way to support growth, build trust, and create a strong foundation for creative work to thrive in a business. In addition to serving as the accounts payable contact, Yasmine works to uncover insights by managing and analyzing financial data. She applies her background knowledge to ensure accuracy and consistency in telling stories with numbers and supporting behind-the-scenes operations.`,
-}
+    {
+      name: "Yasmine El-Aroud",
+      title: "Accounting & Billing Coordinator",
+      img: yasmineHeadshot,
+      bio: `Yasmine El-Aroud has a keen eye for detail and loves to see how numbers come together to shape business decision-making. As a finance student at the University of Michigan–Dearborn, she sees numbers as a way to support growth, build trust, and create a strong foundation for creative work to thrive in a business. In addition to serving as the accounts payable contact, Yasmine works to uncover insights by managing and analyzing financial data. She applies her background knowledge to ensure accuracy and consistency in telling stories with numbers and supporting behind-the-scenes operations.`,
+    },
+    {
+      name: "Kayla Kornelson",
+      title: "Digital and Physical Asset Strategist",
+      img: kaylaHeadshot,
+      bio: `Kayla Kornelson is a creative strategist who believes the strongest brands are built through cohesive storytelling across both digital and physical spaces. From the smallest design detail to the broader campaign identity, she values the role each touchpoint plays in creating assets that feel intentional, memorable, and authentic.
 
+Kayla earned her Master’s degree in Integrated Marketing Communications from the University of North Carolina Wilmington as well as a Bachelor’s degree in Business Administration, Management and Leadership. Her experience spans professional sports, higher education, hospitality, and brand engagement - environments that reinforced her belief that clarity, creativity, and thoughtful details are essential to bringing a brand’s story to life.`,
+    }
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -67,12 +74,10 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
   const toggleBio = (index) => {
     const isClosingCurrent = openIndex === index;
 
-    // Close currently open panel (height -> 0)
     if (openIndex !== null) {
       const prev = panelRefs.current[openIndex];
       if (prev) {
         prev.style.height = `${prev.scrollHeight}px`;
-        // force reflow
         void prev.offsetHeight;
         prev.style.height = "0px";
         prev.classList.remove("opening");
@@ -85,14 +90,11 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
       return;
     }
 
-    // Open the clicked panel smoothly (0 -> scrollHeight)
     const el = panelRefs.current[index];
     if (el) {
-      // reset from possible previous 'auto'
       el.style.height = "0px";
       el.classList.remove("closing");
       el.classList.add("opening");
-      // double-RAF to ensure transition kicks in reliably
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           el.style.height = `${el.scrollHeight}px`;
@@ -108,7 +110,7 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
     if (!el) return;
 
     if (openIndex === index) {
-      el.style.height = "auto"; // lock open height
+      el.style.height = "auto";
       el.classList.remove("opening");
     } else {
       el.classList.remove("closing");
@@ -216,7 +218,6 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
         }
         .bio-toggle:hover{ opacity:.85; }
 
-        /* Smoother expanding panel */
         .bio-panel{
           height:0;
           overflow:hidden;
@@ -232,7 +233,6 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
             transform 360ms ease;
         }
         .bio-panel.open {
-          /* height set inline via JS; css controls fade/slide */
           opacity:1;
           transform: translateY(0);
         }
@@ -253,7 +253,6 @@ Utilizing the power of storytelling, Kiki captures the heart of a brand and tran
           .bio-content{ font-size:15px; }
         }
 
-        /* Respect reduced-motion preferences */
         @media (prefers-reduced-motion: reduce) {
           .bio-panel {
             transition: height 1ms linear;
