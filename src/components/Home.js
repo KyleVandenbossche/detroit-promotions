@@ -2,27 +2,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import elevate from "../photos/clients/elevate.png";
-import sparkling from "../photos/clients/sparkling-sundays.png";
 import sloDown from "../photos/clients/slo-down-wines.png";
 import diciccos from "../photos/clients/diciccos.png";
-import bloom from "../photos/clients/bloom.png";
 import destinations from "../photos/clients/destinations.png";
 import forksFetes from "../photos/clients/forks-and-fetes.png";
 import drKristine from "../photos/clients/dr-kristine.png";
 import mckinley from "../photos/clients/mckinley-holloway.png";
-import soulbris from "../photos/clients/soulbris.png";
 import ashleyHarris from "../photos/clients/ashley-harris.png";
-import berngoSafaris from "../photos/clients/berngo-safaris.png";
 import cie from "../photos/clients/cie.png";
 import lululemon from "../photos/clients/lululemon.png";
 import walsh from "../photos/clients/walsh.png";
 import stunningShots from "../photos/clients/stunning-shots.png";
-import wags from "../photos/clients/wags.JPEG";
 import contractingRemodelers from "../photos/clients/contracting_remodelers.png";
 import dearDarlinDetroit from "../photos/clients/dear_darlin_detroit.png";
 import essentialNeuropsychology from "../photos/clients/essential_neuropsychology.jpg";
 import primaryPink from "../photos/clients/Primary_Pink.png";
 import silverShamrocks from "../photos/clients/the-silver-shamrocks-stacked-logo.png";
+
+import joMalone from "../photos/clients/jo_malone.png";
+import naturalBronze from "../photos/clients/natural_bronze.png";
+import main429 from "../photos/clients/429_main.png";
+import renewl from "../photos/clients/renewl.png";
+import lockLending from "../photos/clients/lock_lending.png";
+import rochesterCity from "../photos/clients/rochester_city.png";
+import automationWorkz from "../photos/clients/automation_works.png";
+import uofm from "../photos/clients/uofm.png";
 
 /* hero photos */
 import rightImage from "../photos/157A7839 (1).jpg";
@@ -43,7 +47,8 @@ function CountersSection() {
 
     function animateCounter(node) {
       const end = parseInt(node.getAttribute("data-end"), 10) || 0;
-      const duration = parseInt(node.getAttribute("data-duration"), 10) || 1200;
+      const duration =
+        parseInt(node.getAttribute("data-duration"), 10) || 1200;
       let startTs = null;
 
       function tick(ts) {
@@ -54,12 +59,11 @@ function CountersSection() {
         node.textContent = current.toLocaleString();
         if (progress < 1) requestAnimationFrame(tick);
         else {
-  const plus = node.getAttribute("data-end") === "30" ? "+" : "";
-  node.textContent = end.toLocaleString() + plus;
-}
-
-
+          const plus = node.getAttribute("data-end") === "30" ? "+" : "";
+          node.textContent = end.toLocaleString() + plus;
+        }
       }
+
       requestAnimationFrame(tick);
     }
 
@@ -84,36 +88,39 @@ function CountersSection() {
     <section className="section">
       <div className="shell">
         <div className="impact-card">
-          <h3 className="impact-title">
-            Solving Big Problems.
-          </h3>
-          <p className="impact-sub">
-          </p>
+          <h3 className="impact-title">Solving Big Problems.</h3>
+          <p className="impact-sub"></p>
 
           <div className="count-grid" ref={sectionRef}>
             <article className="count-card">
-              <div className="count-number" data-end="204" data-duration="1200">0</div>
+              <div className="count-number" data-end="204" data-duration="1200">
+                0
+              </div>
               <div className="count-label">PROJECTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="30" data-duration="1000">0+</div>
+              <div className="count-number" data-end="30" data-duration="1000">
+                0+
+              </div>
               <div className="count-label">SATISFIED CLIENTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="13" data-duration="900">0</div>
+              <div className="count-number" data-end="13" data-duration="900">
+                0
+              </div>
               <div className="count-label">ONGOING PROJECTS</div>
             </article>
             <article className="count-card">
-              <div className="count-number" data-end="906" data-duration="1400">0</div>
+              <div className="count-number" data-end="906" data-duration="1400">
+                0
+              </div>
               <div className="count-label">CUPS OF COFFEE</div>
             </article>
           </div>
         </div>
       </div>
 
-      {/* Integrated CSS just for the counters/card */}
       <style>{`
-        /* Purple card sits inside the same shell as other sections */
         .impact-card{
           background:#9181CC;
           color:#fff;
@@ -122,7 +129,6 @@ function CountersSection() {
           box-shadow:0 6px 20px rgba(0,0,0,0.08);
         }
 
-        /* Match other section title sizing */
         .impact-title{
           text-align:center;
           font-weight:800;
@@ -178,10 +184,31 @@ function CountersSection() {
 
 export default function DetroitPromotionsLanding() {
   const logos = [
-    elevate, sparkling, sloDown, diciccos, bloom,
-    destinations, forksFetes, drKristine, mckinley, soulbris,
-    ashleyHarris, berngoSafaris, cie, wags, walsh, stunningShots, lululemon,
-    contractingRemodelers, dearDarlinDetroit, essentialNeuropsychology, primaryPink, silverShamrocks,
+    elevate,
+    sloDown,
+    diciccos,
+    destinations,
+    forksFetes,
+    drKristine,
+    mckinley,
+    ashleyHarris,
+    cie,
+    walsh,
+    stunningShots,
+    lululemon,
+    contractingRemodelers,
+    dearDarlinDetroit,
+    essentialNeuropsychology,
+    primaryPink,
+    silverShamrocks,
+    joMalone,
+    naturalBronze,
+    main429,
+    renewl,
+    lockLending,
+    rochesterCity,
+    automationWorkz,
+    uofm,
   ];
 
   const doubled = [...logos, ...logos];
@@ -189,7 +216,10 @@ export default function DetroitPromotionsLanding() {
   return (
     <div
       className="container-fluid bg-white text-dark px-0"
-      style={{ "--shell-max": "1410px", "--shell-gutter": "clamp(16px, 4vw, 40px)" }}
+      style={{
+        "--shell-max": "1410px",
+        "--shell-gutter": "clamp(16px, 4vw, 40px)",
+      }}
     >
       <style>{`
         .shell{
@@ -300,19 +330,21 @@ export default function DetroitPromotionsLanding() {
         }
       `}</style>
 
-      {/* ===== Section 1: What We Do ===== */}
       <section className="section pull-up">
         <div className="shell">
           <div className="wwd-wrap">
             <div className="text-panel">
               <div>
-                <h3>What <span className="we-black">We</span> Do</h3>
+                <h3>
+                  What <span className="we-black">We</span> Do
+                </h3>
                 <p>
-                  Detroit Promotions is a creative agency helping companies grow through marketing,
-                  strategy, and compelling content. From startups to established brands, we bring
-                  business-minded creativity that connects, converts, and scales.
+                  Detroit Promotions is a creative agency helping companies grow
+                  through marketing, strategy, and compelling content. From
+                  startups to established brands, we bring business-minded
+                  creativity that connects, converts, and scales.
                 </p>
-               
+
                 <p>We help brands show up bigger—online and off.</p>
               </div>
               <div className="cta-wrap">
@@ -327,25 +359,64 @@ export default function DetroitPromotionsLanding() {
             </div>
 
             <div className="img-right-wrap">
-              <img src={rightImage} alt="Detroit Promotions example" className="img-right" loading="lazy" />
+              <img
+                src={rightImage}
+                alt="Detroit Promotions example"
+                className="img-right"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Section 2: Brands We've Worked With ===== */}
       <section className="logos-section">
         <div className="shell">
-          <h3><span style={{ color: "#9181CC" }}>Brands </span>We've Worked With</h3>
+          <h3>
+            <span style={{ color: "#9181CC" }}>Brands </span>We've Worked With
+          </h3>
 
           <div className="dp-logo-scroller" aria-label="Client logos">
             <div className="dp-logo-track">
               {doubled.map((src, i) => {
                 let customHeight = 130;
-                if (src === cie || src === walsh || src === wags || src === primaryPink || src === silverShamrocks) customHeight = 85;
-                if (src === lululemon || src === stunningShots || src === contractingRemodelers) customHeight = 250;
-                if (src === mckinley || src === soulbris) customHeight = 160;
-                if (src === contractingRemodelers || src === essentialNeuropsychology || src === dearDarlinDetroit) customHeight = 300;
+
+// smaller logos
+if (
+  src === cie ||
+  src === walsh ||
+  src === primaryPink ||
+  src === silverShamrocks
+) customHeight = 85;
+
+// large / wide logos
+if (
+  src === lululemon ||
+  src === stunningShots ||
+  src === contractingRemodelers
+) customHeight = 250;
+
+if (src === mckinley) customHeight = 160;
+
+if (
+  src === contractingRemodelers ||
+  src === essentialNeuropsychology ||
+  src === dearDarlinDetroit
+) customHeight = 300;
+
+// ✅ NEW LOGOS — MAKE THEM MATCH SCALE
+if (
+  src === joMalone ||
+  src === naturalBronze ||
+  src === main429 ||
+  src === renewl ||
+  src === lockLending ||
+  src === rochesterCity ||
+  src === automationWorkz
+) customHeight = 330;
+
+// keep U of M slightly larger but controlled
+if (src === uofm) customHeight = 200;
 
                 return (
                   <img
@@ -362,51 +433,89 @@ export default function DetroitPromotionsLanding() {
         </div>
       </section>
 
-      {/* ===== Section 3: How We Do It + photo ===== */}
       <section className="section pull-up">
         <div className="shell">
           <div className="wwd-wrap how-wrap">
-            {/* <-- added how-wrap */}
             <div className="img-right-wrap">
-              <img src={leftImage} alt="Detroit Promotions example" className="img-right" loading="lazy" />
+              <img
+                src={leftImage}
+                alt="Detroit Promotions example"
+                className="img-right"
+                loading="lazy"
+              />
             </div>
             <div className="text-panel">
               <div className="inner">
-                {/* <-- added inner wrapper */}
-                  <br />
-                  <br />
+                <br />
+                <br />
                 <h3>How We Do It</h3>
 
                 <p>
-We move fast when the moment calls for it, slow when care is needed, and always with intention. We make every collaboration an opportunity to elevate not just the work, but the people involved.
-</p>
-We don’t just deliver projects—we make them matter. We build real connections, foster lasting relationships, and make sure every project doesn’t just get done—it gets remembered.
-<p>
-We cut through the noise of "marketing" where everyone’s “building their brand” and posting without purpose— that’s when Detroit Promotions stands apart.
+                  We move fast when the moment calls for it, slow when care is
+                  needed, and always with intention. We make every collaboration
+                  an opportunity to elevate not just the work, but the people
+                  involved.
                 </p>
-                <p className="fancy-quote">Your work isn’t just your work—it becomes part of ours.</p>
+                We don’t just deliver projects—we make them matter. We build
+                real connections, foster lasting relationships, and make sure
+                every project doesn’t just get done—it gets remembered.
+                <p>
+                  We cut through the noise of "marketing" where everyone’s
+                  “building their brand” and posting without purpose— that’s
+                  when Detroit Promotions stands apart.
+                </p>
+                <p className="fancy-quote">
+                  Your work isn’t just your work—it becomes part of ours.
+                </p>
               </div>
-              <div className="cta-wrap">{/* optional CTA */}</div>
+              <div className="cta-wrap"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Section 4: Reviews ===== */}
       <section className="reviews-section">
         <div className="shell">
           <h3 className="reviews-title">What Our Clients Say</h3>
 
           <div className="reviews-grid">
             {[
-              { name: "lululemon", text: "“You never miss a detail. So well planned and such a fun event!”", stars: 5 },
-              { name: "Jo Malone London", text: "“Obsessed, this video is so awesome. We love you.”", stars: 5 },
-              { name: "SLO Down Wines", text: "“The posts look great so far. Thank you very much for all your efforts with the content push!”", stars: 5 },
-              { name: "Dear Darlin Detroit", text: "“Working with you and your team is a dream. Having an expert in your space will really help me build out Dear Darlin’ Detroit’s identity.”", stars: 5 },
-              { name: "The Silver Shamrocks", text: "“Hey there! I love all of my videos so much!”", stars: 5 },
-              { name: "Lock Lending Group", text: "“Thank you so much! Looking forward to everything, I felt really inspired after meeting with you girls today!.”", stars: 5 },
+              {
+                name: "lululemon",
+                text: "“You never miss a detail. So well planned and such a fun event!”",
+                stars: 5,
+              },
+              {
+                name: "Jo Malone London",
+                text: "“Obsessed, this video is so awesome. We love you.”",
+                stars: 5,
+              },
+              {
+                name: "SLO Down Wines",
+                text: "“The posts look great so far. Thank you very much for all your efforts with the content push!”",
+                stars: 5,
+              },
+              {
+                name: "Dear Darlin Detroit",
+                text: "“Working with you and your team is a dream. Having an expert in your space will really help me build out Dear Darlin’ Detroit’s identity.”",
+                stars: 5,
+              },
+              {
+                name: "The Silver Shamrocks",
+                text: "“Hey there! I love all of my videos so much!”",
+                stars: 5,
+              },
+              {
+                name: "Lock Lending Group",
+                text: "“Thank you so much! Looking forward to everything, I felt really inspired after meeting with you girls today!.”",
+                stars: 5,
+              },
             ].map((r, i) => (
-              <article key={i} className="review-card" aria-label={`Review by ${r.name}`}>
+              <article
+                key={i}
+                className="review-card"
+                aria-label={`Review by ${r.name}`}
+              >
                 <div className="stars" aria-hidden="true">
                   {Array.from({ length: 5 }).map((_, idx) => (
                     <svg
@@ -442,36 +551,29 @@ We cut through the noise of "marketing" where everyone’s “building their bra
           @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
           @media (min-width: 1100px) { .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
-          /* Center the text column vertically only in the How We Do It section */
-/* Slightly more space between paragraphs in Section 3 only */
-.how-wrap .text-panel p {
-  margin: 1.25rem 0;
-}
+          .how-wrap .text-panel p {
+            margin: 1.25rem 0;
+          }
 
-
-          /* Keep content width tidy while centered */
           .how-wrap .text-panel .inner{
             width:100%;
             max-width:90%;
             margin-inline:auto;
           }
 
-          /* Subtle, elegant treatment for the line */
           .fancy-quote{
-            font-style: italic; /* fancier feel, same size */
-            font-weight: 800;   /* adds presence without resizing */
+            font-style: italic;
+            font-weight: 800;
             letter-spacing: 0.01em;
             position: relative;
             display:inline-block;
             padding-bottom: 4px;
-            /* soft gradient underline that matches your brand purple */
             background-image: linear-gradient(90deg, #9181CC 0%, rgba(145,129,204,0.15) 100%);
             background-size: 100% 2px;
             background-repeat: no-repeat;
             background-position: 0 100%;
           }
 
-          /* Optional: tiny quote mark accents without changing layout */
           .fancy-quote::before,
           .fancy-quote::after{
             content: "“";
@@ -485,7 +587,6 @@ We cut through the noise of "marketing" where everyone’s “building their bra
         `}</style>
       </section>
 
-      {/* ===== Section 5: Impact Counters (now aligned via shell) ===== */}
       <CountersSection />
     </div>
   );
