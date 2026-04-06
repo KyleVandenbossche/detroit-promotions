@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import elevate from "../photos/clients/elevate.png";
 import sloDown from "../photos/clients/slo-down-wines.png";
 import diciccos from "../photos/clients/diciccos.png";
-import destinations from "../photos/clients/destinations.png";
 import forksFetes from "../photos/clients/forks-and-fetes.png";
 import drKristine from "../photos/clients/dr-kristine.png";
 import mckinley from "../photos/clients/mckinley-holloway.png";
@@ -16,9 +15,7 @@ import stunningShots from "../photos/clients/stunning-shots.png";
 import contractingRemodelers from "../photos/clients/contracting_remodelers.png";
 import dearDarlinDetroit from "../photos/clients/dear_darlin_detroit.png";
 import essentialNeuropsychology from "../photos/clients/essential_neuropsychology.jpg";
-import primaryPink from "../photos/clients/Primary_Pink.png";
 import silverShamrocks from "../photos/clients/the-silver-shamrocks-stacked-logo.png";
-
 import joMalone from "../photos/clients/jo_malone.png";
 import naturalBronze from "../photos/clients/natural_bronze.png";
 import main429 from "../photos/clients/429_main.png";
@@ -186,8 +183,8 @@ export default function DetroitPromotionsLanding() {
   const logos = [
     elevate,
     sloDown,
+    lululemon,
     diciccos,
-    destinations,
     forksFetes,
     drKristine,
     mckinley,
@@ -195,11 +192,9 @@ export default function DetroitPromotionsLanding() {
     cie,
     walsh,
     stunningShots,
-    lululemon,
     contractingRemodelers,
     dearDarlinDetroit,
     essentialNeuropsychology,
-    primaryPink,
     silverShamrocks,
     joMalone,
     naturalBronze,
@@ -385,7 +380,6 @@ export default function DetroitPromotionsLanding() {
 if (
   src === cie ||
   src === walsh ||
-  src === primaryPink ||
   src === silverShamrocks
 ) customHeight = 85;
 
