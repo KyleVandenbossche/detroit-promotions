@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import SocialRail from './components/SocialRail';
 import ScrollToTop from './components/ScrollToTop';
+import Press from './components/Press'
 
 // ⬅️ add this import (assuming you saved the helper at ./ScrollToTop)
 
@@ -72,8 +73,8 @@ export default function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="our-story" element={<OurStory />} />
         <Route path="services" element={<Services />} />
+        <Route path="/press" element={<Press />} />
         <Route path="contact" element={<Contact />} />
-
         <Route path="*" element={<div style={{ padding: 24 }}>Page not found.</div>} />
       </Route>
     </Routes>
